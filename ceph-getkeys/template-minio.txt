@@ -1,0 +1,12 @@
+{
+	"version": "10",
+	"aliases": {
+		"s3": {
+			"url": "https://your.ceph.endpoint",
+			"accessKey": "{{.AccessKey}}",
+			"secretKey": "{{.SecretKey}}",
+			"api": "S3v4",
+			"path": "dns"
+		}
+	}
+}
