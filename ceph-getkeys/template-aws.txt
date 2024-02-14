@@ -1,0 +1,4 @@
+[{{.Bucket}}]
+endpoint_url = https://your.ceph.endpoint
+aws_access_key_id = {{.AccessKey}}
+aws_secret_access_key = {{.SecretKey}}
