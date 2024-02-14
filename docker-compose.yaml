@@ -1,0 +1,26 @@
+---
+version: '3.8'
+services:
+  cephadminpod:
+    build: ./ceph-getkeys/
+    image: ceph-getkeys
+    container_name: ceph-getkeys
+    environment:
+      - ceph_bucket=your-bucket
+    volumes:
+      - keystothegate:/tmp/
+
+  housekeeping:
+    build: ./housekeeping/
+    image: cleanup
+    container_name: cleanup
+    environment:
+      - ceph_bucket=your-bucket
+      - dir=your-dir
+      - days=30d
+    volumes:
+      - keystothegate:/tmp/
+      - ./logging:/log
+
+volumes:
+  keystothegate:
