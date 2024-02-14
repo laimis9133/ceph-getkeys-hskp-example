@@ -5,5 +5,5 @@ Second container picks up the keys and cleans up the bucket using MinIO client.
 Retention and bucket names and subdirectories are set through _docker-compose.yaml_ which can be translated to a Kubernetes deployment.
   
 Usage: docker-compose up --build -d  
-Monitor logging/logs for output.
+Monitor logging/log for output.
 
