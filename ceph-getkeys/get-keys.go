@@ -69,10 +69,10 @@ func main() {
   tmplMinIO, err := template.New("template").Parse(string(templateContentMinIO))
   if err != nil { panic(fmt.Sprintf("Cannot parse template.", err)) }
 
-  credentials, err := os.Create("/tmp/credentials")  
+  credentials, err := os.Create("/tmp/credentials")  // Keys stored in a shared /tmp/ volume (keystothegate) - reachable by housekeepig container
   defer credentials.Close()
 
-  configjson, err := os.Create("/tmp/config.json")  
+  configjson, err := os.Create("/tmp/config.json")   // Keys stored in a shared /tmp/ volume (keystothegate) - reachable by housekeepig container
   defer configjson.Close()
 
   for data := range ch {
